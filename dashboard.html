@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Dashboard | I Putu Agus Adi Artha Saputra</title>
+    <meta
+      name="description"
+      content="Dashboard editing konten portofolio untuk I Putu Agus Adi Artha Saputra."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="shell">
+      <div class="brand">
+        <span class="brand-mark">DX</span>
+        <div>
+          <strong>Portfolio Dashboard</strong>
+          <small>I Putu Agus Adi Artha Saputra</small>
+        </div>
+      </div>
+      <div class="toolbar">
+        <a class="ghost" href="index.html">Open Portfolio</a>
+        <button class="primary" id="saveBtn">Save</button>
+        <button class="ghost" id="resetBtn">Reset</button>
+        <button class="ghost" id="exportBtn">Export JSON</button>
+        <label class="ghost file-btn">
+          Import JSON
+          <input type="file" id="importInput" accept="application/json" hidden />
+        </label>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="editor panel">
+        <div class="panel-head">
+          <p class="eyebrow">Content Editor</p>
+          <h1>Edit isi portofolio dengan form terstruktur.</h1>
+          <p class="sub">
+            Semua perubahan disimpan ke <code>localStorage</code> dan bisa diexport
+            sebagai JSON.
+          </p>
+        </div>
+
+        <form id="editorForm" class="form-grid">
+          <section class="card">
+            <h2>Identity</h2>
+            <div class="grid-2">
+              <label>
+                Nama
+                <input name="name" type="text" />
+              </label>
+              <label>
+                Title
+                <input name="role" type="text" />
+              </label>
+            </div>
+            <label>
+              Brand Subtitle
+              <input name="brandSubtitle" type="text" />
+            </label>
+            <label>
+              Hero Eyebrow
+              <input name="heroEyebrow" type="text" />
+            </label>
+            <label>
+              Hero Lead
+              <textarea name="heroLead" rows="4"></textarea>
+            </label>
+            <div class="grid-3">
+              <label>
+                Metric 1
+                <input name="metric1" type="text" />
+              </label>
+              <label>
+                Metric 2
+                <input name="metric2" type="text" />
+              </label>
+              <label>
+                Metric 3
+                <input name="metric3" type="text" />
+              </label>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>About</h2>
+            <label>
+              Paragraph 1
+              <textarea name="about1" rows="4"></textarea>
+            </label>
+            <label>
+              Paragraph 2
+              <textarea name="about2" rows="4"></textarea>
+            </label>
+          </section>
+
+          <section class="card">
+            <h2>Experience</h2>
+            <div class="exp-block">
+              <h3>Experience 1</h3>
+              <div class="grid-2">
+                <label>Role<input name="exp1Role" type="text" /></label>
+                <label>Company<input name="exp1Company" type="text" /></label>
+              </div>
+              <div class="grid-2">
+                <label>Period<input name="exp1Period" type="text" /></label>
+                <label>Status<input name="exp1Status" type="text" /></label>
+              </div>
+              <label>
+                Bullets, one per line
+                <textarea name="exp1Bullets" rows="6"></textarea>
+              </label>
+            </div>
+            <div class="exp-block">
+              <h3>Experience 2</h3>
+              <div class="grid-2">
+                <label>Role<input name="exp2Role" type="text" /></label>
+                <label>Company<input name="exp2Company" type="text" /></label>
+              </div>
+              <div class="grid-2">
+                <label>Period<input name="exp2Period" type="text" /></label>
+                <label>Status<input name="exp2Status" type="text" /></label>
+              </div>
+              <label>
+                Bullets, one per line
+                <textarea name="exp2Bullets" rows="6"></textarea>
+              </label>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Skills</h2>
+            <div class="grid-3">
+              <label>Top Skills<textarea name="skillsTop" rows="5"></textarea></label>
+              <label>Tools & Platform<textarea name="skillsTools" rows="5"></textarea></label>
+              <label>Supporting Skills<textarea name="skillsSupport" rows="5"></textarea></label>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Sertifikasi</h2>
+            <div class="grid-2">
+              <label>Cert 1 Title<input name="cert1Title" type="text" /></label>
+              <label>Cert 1 Note<input name="cert1Note" type="text" /></label>
+              <label>Cert 2 Title<input name="cert2Title" type="text" /></label>
+              <label>Cert 2 Note<input name="cert2Note" type="text" /></label>
+              <label>Cert 3 Title<input name="cert3Title" type="text" /></label>
+              <label>Cert 3 Note<input name="cert3Note" type="text" /></label>
+              <label>Cert 4 Title<input name="cert4Title" type="text" /></label>
+              <label>Cert 4 Note<input name="cert4Note" type="text" /></label>
+              <label>Cert 5 Title<input name="cert5Title" type="text" /></label>
+              <label>Cert 5 Note<input name="cert5Note" type="text" /></label>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Fokus Kerja</h2>
+            <div class="grid-2">
+              <label>Focus 1<input name="focus1Title" type="text" /></label>
+              <label>Focus 1 Note<textarea name="focus1Text" rows="3"></textarea></label>
+              <label>Focus 2<input name="focus2Title" type="text" /></label>
+              <label>Focus 2 Note<textarea name="focus2Text" rows="3"></textarea></label>
+              <label>Focus 3<input name="focus3Title" type="text" /></label>
+              <label>Focus 3 Note<textarea name="focus3Text" rows="3"></textarea></label>
+              <label>Focus 4<input name="focus4Title" type="text" /></label>
+              <label>Focus 4 Note<textarea name="focus4Text" rows="3"></textarea></label>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Contact</h2>
+            <div class="grid-2">
+              <label>Email<input name="email" type="email" /></label>
+              <label>Phone<input name="phone" type="text" /></label>
+            </div>
+            <label>
+              LinkedIn
+              <input name="linkedin" type="text" />
+            </label>
+            <label>
+              Contact Highlight
+              <textarea name="contactHighlight" rows="4"></textarea>
+            </label>
+          </section>
+        </form>
+      </section>
+
+      <aside class="preview panel">
+        <div class="panel-head">
+          <p class="eyebrow">Live Preview</p>
+          <h2>Hasil perubahan akan muncul di sini.</h2>
+          <p class="sub">Preview ini mengikuti data yang sedang kamu edit.</p>
+        </div>
+
+        <div id="previewRoot" class="preview-root"></div>
+      </aside>
+    </main>
+
+    <div class="status" id="status" role="status" aria-live="polite">Ready.</div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
