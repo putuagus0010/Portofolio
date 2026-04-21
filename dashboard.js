@@ -2,11 +2,14 @@ const STORAGE_KEY = "portfolioContentV1";
 
 const DEFAULT_DATA = {
   name: "I Putu Agus Adi Artha Saputra",
-  role: "Software Quality Assurance",
-  brandSubtitle: "SQA | IT Support | Testing",
-  heroEyebrow: "Software Quality Assurance | Manual & Automation Testing | IT Support",
+  role: "Quality Assurance Engineer | IT Support | Aspiring Automation Tester",
+  brandSubtitle: "SQA | IT Support | Automation",
+  heroEyebrow: "Quality Assurance Engineer | IT Support | Aspiring Automation Tester",
+  heroTagline:
+    "Passionate about ensuring software quality through testing and continuous improvement.",
   heroLead:
     "Saya adalah Software Quality Assurance dengan pengalaman profesional di PT Infotech Solution. Fokus saya ada pada manual dan automation testing, user support, troubleshooting, dokumentasi aplikasi, dan peningkatan product reliability serta user experience.",
+  profilePhoto: "",
   metric1: "1+ Tahun\nPengalaman QA dan IT Support",
   metric2: "3.45\nGPA Universitas Gunadarma",
   metric3: "5+\nSertifikasi utama",
@@ -60,6 +63,7 @@ const DEFAULT_DATA = {
   email: "putuagus0010@gmail.com",
   phone: "+62 813-8616-9910",
   linkedin: "https://www.linkedin.com/in/agusadi",
+  github: "",
   contactHighlight:
     "QA manual testing, automation testing, product research, UI/UX QA, documentation, troubleshooting, dan koordinasi lintas tim.",
 };
@@ -71,8 +75,10 @@ const saveBtn = document.getElementById("saveBtn");
 const resetBtn = document.getElementById("resetBtn");
 const exportBtn = document.getElementById("exportBtn");
 const importInput = document.getElementById("importInput");
+const profilePhotoInput = document.getElementById("profilePhotoInput");
 
 const fields = Array.from(form.elements).filter((el) => el.name);
+let currentProfilePhoto = DEFAULT_DATA.profilePhoto;
 
 function readStoredData() {
   try {
@@ -128,24 +134,27 @@ function collectForm() {
   for (const field of fields) {
     data[field.name] = field.value;
   }
+  data.profilePhoto = currentProfilePhoto;
   return data;
 }
 
 function renderPreview(data) {
-  const metrics = splitLines(data.metric1).length > 1
-    ? [data.metric1, data.metric2, data.metric3]
-    : [data.metric1, data.metric2, data.metric3];
-
-  const [m1Title, ...m1Desc] = String(metrics[0]).split("\n");
-  const [m2Title, ...m2Desc] = String(metrics[1]).split("\n");
-  const [m3Title, ...m3Desc] = String(metrics[2]).split("\n");
+  const [m1Title, ...m1Desc] = String(data.metric1).split("\n");
+  const [m2Title, ...m2Desc] = String(data.metric2).split("\n");
+  const [m3Title, ...m3Desc] = String(data.metric3).split("\n");
+  const photo = data.profilePhoto || "assets/profile-placeholder.svg";
 
   previewRoot.innerHTML = `
     <section class="preview-hero">
-      <h3>${escapeHtml(data.name)}</h3>
-      <p>${escapeHtml(data.role)}</p>
-      <p>${escapeHtml(data.heroEyebrow)}</p>
-      <p>${escapeHtml(data.heroLead)}</p>
+      <div class="preview-hero-top">
+        <img class="preview-photo" src="${escapeHtml(photo)}" alt="Profile photo preview" />
+        <div>
+          <h3>${escapeHtml(data.name)}</h3>
+          <p>${escapeHtml(data.role)}</p>
+          <p>${escapeHtml(data.heroTagline)}</p>
+          <p>${escapeHtml(data.heroLead)}</p>
+        </div>
+      </div>
       <div class="preview-metrics">
         <div><strong>${escapeHtml(m1Title)}</strong><div>${escapeHtml(m1Desc.join(" "))}</div></div>
         <div><strong>${escapeHtml(m2Title)}</strong><div>${escapeHtml(m2Desc.join(" "))}</div></div>
@@ -217,7 +226,7 @@ function renderPreview(data) {
 
     <section class="preview-section">
       <h4>Contact</h4>
-      <p>${escapeHtml(data.email)}<br>${escapeHtml(data.phone)}<br>${escapeHtml(data.linkedin)}</p>
+      <p>${escapeHtml(data.email)}<br>${escapeHtml(data.phone)}<br>${escapeHtml(data.linkedin)}<br>${escapeHtml(data.github || "GitHub not set")}</p>
       <p>${escapeHtml(data.contactHighlight)}</p>
     </section>
   `;
@@ -235,6 +244,7 @@ function sync() {
 }
 
 const initial = readStoredData();
+currentProfilePhoto = initial.profilePhoto || "";
 populateForm(initial);
 renderPreview(initial);
 setStatus("Loaded dashboard data.");
@@ -253,6 +263,8 @@ saveBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", () => {
   localStorage.removeItem(STORAGE_KEY);
+  currentProfilePhoto = DEFAULT_DATA.profilePhoto;
+  if (profilePhotoInput) profilePhotoInput.value = "";
   populateForm(DEFAULT_DATA);
   renderPreview(DEFAULT_DATA);
   setStatus("Reset to defaults.");
@@ -270,6 +282,21 @@ exportBtn.addEventListener("click", () => {
   setStatus("Exported JSON.");
 });
 
+profilePhotoInput?.addEventListener("change", () => {
+  const file = profilePhotoInput.files?.[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    currentProfilePhoto = String(reader.result || "");
+    const data = collectForm();
+    renderPreview(data);
+    saveData(data);
+    setStatus("Profile photo updated.");
+  };
+  reader.readAsDataURL(file);
+});
+
 importInput.addEventListener("change", async () => {
   const file = importInput.files?.[0];
   if (!file) return;
@@ -277,6 +304,8 @@ importInput.addEventListener("change", async () => {
     const text = await file.text();
     const parsed = JSON.parse(text);
     const merged = { ...structuredClone(DEFAULT_DATA), ...parsed };
+    currentProfilePhoto = merged.profilePhoto || "";
+    if (profilePhotoInput) profilePhotoInput.value = "";
     populateForm(merged);
     renderPreview(merged);
     saveData(merged);

@@ -273,6 +273,22 @@ textarea:focus {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
+.preview-hero-top {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.preview-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+}
+
 .preview-hero h3,
 .preview-section h4 {
   margin: 0;
@@ -321,6 +337,10 @@ textarea:focus {
   padding-left: 18px;
   display: grid;
   gap: 6px;
+}
+
+.muted {
+  color: var(--muted);
 }
 
 .preview-section {
@@ -390,8 +410,14 @@ textarea:focus {
 
   .grid-2,
   .grid-3,
-  .preview-metrics {
+  .preview-metrics,
+  .preview-hero-top {
     grid-template-columns: 1fr;
+  }
+
+  .preview-photo {
+    width: 96px;
+    height: 96px;
   }
 
   .panel-head h1 {

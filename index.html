@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>I Putu Agus Adi Artha Saputra | Portfolio Futuristik</title>
+    <title>I Putu Agus Adi Artha Saputra | Futuristic Portfolio</title>
     <meta
       name="description"
-      content="Portofolio futuristik I Putu Agus Adi Artha Saputra, Software Quality Assurance dengan pengalaman manual dan automation testing, IT support, dan peningkatan product reliability."
+      content="Portofolio futuristik I Putu Agus Adi Artha Saputra, Quality Assurance Engineer, IT Support, dan aspiring automation tester."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +18,17 @@
   </head>
   <body>
     <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        <path d="M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path d="M12 3v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        <path d="M8 10l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 18h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      </symbol>
       <symbol id="icon-spark" viewBox="0 0 24 24">
         <path d="M12 2l1.9 5.7L20 9.6l-6.1 1.9L12 17l-1.9-5.5L4 9.6l6.1-1.9L12 2z" />
-        <path d="M19 15l.9 2.7L22 18.5l-2.1.8L19 22l-.9-2.7-2.1-.8 2.1-.8L19 15z" />
       </symbol>
       <symbol id="icon-shield" viewBox="0 0 24 24">
         <path d="M12 2l7 3v6c0 5-3.4 9.6-7 11-3.6-1.4-7-6-7-11V5l7-3z" />
@@ -30,10 +38,6 @@
         <path d="M6 4v4H2V4h4zm16 0v4h-4V4h4zM6 16v4H2v-4h4zm16 0v4h-4v-4h4z" />
         <path d="M6 8h4v8H6zM14 8h4v8h-4zM10 12h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
       </symbol>
-      <symbol id="icon-mouse" viewBox="0 0 24 24">
-        <path d="M12 2c3.9 0 7 3.1 7 7v6c0 3.9-3.1 7-7 7s-7-3.1-7-7V9c0-3.9 3.1-7 7-7z" />
-        <path d="M12 6v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-      </symbol>
       <symbol id="icon-mail" viewBox="0 0 24 24">
         <path d="M4 5h16a2 2 0 0 1 2 2v10H2V7a2 2 0 0 1 2-2z" />
         <path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
@@ -41,39 +45,45 @@
       <symbol id="icon-phone" viewBox="0 0 24 24">
         <path d="M7.6 3h2c.5 0 .9.3 1 .8l.9 4c.1.5-.1 1-.5 1.3l-1.5 1.3a14 14 0 0 0 4.4 4.4l1.3-1.5c.3-.4.8-.6 1.3-.5l4 .9c.5.1.8.5.8 1v2c0 .6-.4 1.1-.9 1.2-1.1.2-2.4.2-3.8-.2-3.2-.8-6.9-3.6-9.3-6.9-2.4-3.3-3.4-6.8-3.2-9.3C6.5 3.4 7 3 7.6 3z" />
       </symbol>
-      <symbol id="icon-pin" viewBox="0 0 24 24">
-        <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z" />
-        <circle cx="12" cy="9" r="2.3" />
-      </symbol>
       <symbol id="icon-link" viewBox="0 0 24 24">
         <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 1 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
       </symbol>
     </svg>
 
+    <div class="particle-layer" id="particles" aria-hidden="true"></div>
     <div class="background-grid" aria-hidden="true"></div>
     <div class="orb orb-a" aria-hidden="true"></div>
     <div class="orb orb-b" aria-hidden="true"></div>
     <div class="orb orb-c" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
     <header class="topbar">
       <a class="brand" href="#home">
         <span class="brand-mark">IA</span>
         <span class="brand-text">
           <strong>I Putu Agus</strong>
-          <small>SQA | IT Support | Testing</small>
+          <small>SQA | IT Support | Automation</small>
         </span>
       </a>
 
       <nav class="nav">
-        <a href="#tentang">Tentang</a>
-        <a href="#pengalaman">Pengalaman</a>
-        <a href="#keahlian">Keahlian</a>
-        <a href="#sertifikasi">Sertifikasi</a>
-        <a href="#fokus">Fokus</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
         <a href="dashboard.html">Dashboard</a>
       </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
     </header>
 
     <main id="home">
@@ -81,135 +91,122 @@
         <div class="hero-copy">
           <p class="eyebrow">
             <span class="pulse-dot"></span>
-            Software Quality Assurance | Manual & Automation Testing | IT Support
+            Quality Assurance Engineer | IT Support | Aspiring Automation Tester
           </p>
+
           <h1>
-            Portofolio futuristik untuk
-            <span>I Putu Agus Adi Artha Saputra</span>
+            I Putu Agus Adi Artha Saputra
           </h1>
+
+          <p class="hero-role" id="heroRole">Quality Assurance Engineer | IT Support | Aspiring Automation Tester</p>
+
+          <div class="typing-wrap">
+            <span class="typing-prefix">Tagline</span>
+            <span class="typing-text" id="typingTagline"></span>
+          </div>
+
           <p class="hero-lead">
-            Saya adalah Software Quality Assurance dengan pengalaman profesional
-            di PT Infotech Solution. Fokus saya ada pada manual dan automation
-            testing, user support, troubleshooting, dokumentasi aplikasi, dan
-            peningkatan product reliability serta user experience.
+            Passionate about ensuring software quality through testing and continuous improvement.
+            I build reliable digital experiences through QA, UAT, issue analysis, documentation, and IT support.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#kontak">Hubungi Saya</a>
-            <a class="button button-secondary" href="#fokus">Lihat Fokus</a>
+            <a class="button button-primary" href="#projects">
+              View Portfolio
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </a>
+            <a class="button button-secondary" href="assets/I-Putu-Agus-Adi-Artha-Saputra-CV.pdf" download>
+              Download CV
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-download"></use></svg>
+            </a>
           </div>
 
-          <div class="metrics">
-            <article>
-              <strong>1+ Tahun</strong>
-              <span>Pengalaman QA dan IT Support</span>
+          <div class="hero-stats">
+            <article class="stat-card">
+              <strong>1+ Years</strong>
+              <span>QA and IT Support experience</span>
             </article>
-            <article>
-              <strong>3.45</strong>
-              <span>GPA Universitas Gunadarma</span>
+            <article class="stat-card">
+              <strong>3.45 GPA</strong>
+              <span>Universitas Gunadarma</span>
             </article>
-            <article>
-              <strong>5+</strong>
-              <span>Sertifikasi utama</span>
+            <article class="stat-card">
+              <strong>5 Certificates</strong>
+              <span>QA, ITSM, ISO, SQL, Web</span>
             </article>
           </div>
         </div>
 
-        <aside class="hero-card">
-          <div class="profile-badge">Open for opportunities</div>
-          <div class="hero-visual" aria-hidden="true">
-            <svg viewBox="0 0 560 360" class="hero-svg" role="img">
-              <defs>
-                <linearGradient id="gridGlow" x1="0%" x2="100%" y1="0%" y2="100%">
-                  <stop offset="0%" stop-color="#4ef3ff" stop-opacity="0.95" />
-                  <stop offset="100%" stop-color="#7ef9a3" stop-opacity="0.95" />
-                </linearGradient>
-              </defs>
-              <rect x="12" y="12" width="536" height="336" rx="28" fill="rgba(7, 13, 28, 0.35)" stroke="rgba(255,255,255,0.08)" />
-              <circle cx="180" cy="170" r="74" fill="none" stroke="url(#gridGlow)" stroke-width="2" stroke-dasharray="10 10" />
-              <circle cx="180" cy="170" r="120" fill="none" stroke="rgba(78,243,255,0.18)" stroke-width="1.4" />
-              <circle cx="390" cy="122" r="48" fill="rgba(78,243,255,0.12)" stroke="rgba(78,243,255,0.5)" />
-              <circle cx="410" cy="248" r="70" fill="rgba(126,249,163,0.08)" stroke="rgba(126,249,163,0.42)" />
-              <path d="M104 248h132l46-96h86l76 56" fill="none" stroke="rgba(230,243,255,0.5)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M144 102l38 28 34-20 34 32 52-42 50 26 40-14" fill="none" stroke="rgba(78,243,255,0.7)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-              <circle cx="180" cy="170" r="22" fill="url(#gridGlow)" />
-              <circle cx="390" cy="122" r="14" fill="#04111f" />
-              <circle cx="410" cy="248" r="16" fill="#04111f" />
-            </svg>
+        <aside class="hero-visual panel-surface">
+          <div class="photo-shell">
+            <div class="photo-orbit"></div>
+            <img
+              id="heroPhoto"
+              class="hero-photo"
+              src="assets/profile-placeholder.svg"
+              alt="Profile photo of I Putu Agus Adi Artha Saputra"
+              loading="eager"
+            />
           </div>
-          <div class="hero-card-content">
-            <h2>I Putu Agus Adi Artha Saputra</h2>
-            <p>Software Quality Assurance</p>
-            <div class="signal-grid">
-              <div class="signal-card">
-                <svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
-                <span>Product Research</span>
-              </div>
-              <div class="signal-card">
-                <svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>
-                <span>UI/UX QA</span>
-              </div>
-              <div class="signal-card">
-                <svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>
-                <span>Toad</span>
-              </div>
-            </div>
-            <dl class="fact-list">
+
+          <div class="hero-mini-cards">
+            <article class="mini-card">
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
               <div>
-                <dt>
-                  <svg class="inline-icon" aria-hidden="true"><use href="#icon-pin"></use></svg>
-                  Lokasi
-                </dt>
-                <dd>Depok, Jawa Barat, Indonesia</dd>
+                <strong>Product Research</strong>
+                <span>UI/UX and QA analysis</span>
               </div>
+            </article>
+            <article class="mini-card">
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>
               <div>
-                <dt>
-                  <svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>
-                  Bahasa
-                </dt>
-                <dd>Bahasa Indonesia | English</dd>
+                <strong>System Support</strong>
+                <span>Troubleshooting and guidance</span>
               </div>
+            </article>
+            <article class="mini-card">
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>
               <div>
-                <dt>
-                  <svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>
-                  Fokus
-                </dt>
-                <dd>Manual Testing | Automation Testing | IT Support</dd>
+                <strong>Automation Ready</strong>
+                <span>Growing toward Selenium workflows</span>
               </div>
-            </dl>
+            </article>
           </div>
         </aside>
       </section>
 
-      <section id="tentang" class="section panel reveal">
+      <section id="about" class="section panel reveal">
         <div class="section-heading">
-          <p class="section-kicker">01 / Tentang Saya</p>
-          <h2>Menggabungkan ketelitian QA, automation mindset, dan layanan IT yang responsif.</h2>
+          <p class="section-kicker">01 / About Me</p>
+          <h2>Information Systems graduate focused on quality, stability, and user experience.</h2>
         </div>
-        <div class="about-grid">
-          <div class="about-card">
+
+        <div class="about-layout">
+          <article class="about-card accent">
             <p>
-              Saya memiliki pengalaman profesional di PT Infotech Solution sebagai
-              Software Quality Assurance dan IT Support. Dalam pekerjaan sehari-hari,
-              saya fokus pada manual testing, automation testing, analisis issue,
-              dukungan pengguna, serta memastikan aplikasi tetap stabil setelah rilis.
+              I am a graduate of Information Systems from Universitas Gunadarma with a GPA of 3.45.
+              My background combines software quality assurance, support operations, and hands-on testing.
             </p>
-          </div>
-          <div class="about-card accent">
+          </article>
+          <article class="about-card">
             <p>
-              Saya juga terbiasa menyusun dokumentasi, menyiapkan skenario UAT,
-              berkoordinasi dengan vendor, menggunakan JIRA, JMeter, SQL, Figma,
-              Visual Studio, HTML/CSS, dan Selenium untuk mendukung kualitas produk.
+              I currently work at PT Infotech Solution, where I support QA and IT operations through
+              UAT scenarios, manual testing, documentation, and issue analysis.
             </p>
-          </div>
+          </article>
+          <article class="about-card">
+            <p>
+              Certifications include ISO 9001 Quality Management System and BNSP IT Service Management,
+              which strengthen my quality mindset and service discipline.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section id="pengalaman" class="section panel reveal">
+      <section id="experience" class="section panel reveal">
         <div class="section-heading">
-          <p class="section-kicker">02 / Pengalaman</p>
-          <h2>Jejak kerja yang berfokus pada kualitas, support, dan pengalaman pengguna.</h2>
-          <p class="hero-lead" style="margin-top: 0;">PT Infotech Solutions, Jakarta Raya, Indonesia</p>
+          <p class="section-kicker">02 / Experience</p>
+          <h2>Timeline of support, testing, and quality-driven collaboration.</h2>
         </div>
 
         <div class="timeline">
@@ -219,12 +216,12 @@
               <span>PT Infotech Solution | IndiHome by Telkomsel</span>
             </div>
             <h3>Quality Assurance and Support IT</h3>
-            <p class="period">Oktober 2024 - Present</p>
+            <p class="period">October 2024 - Present</p>
             <ul>
               <li>Created user documentation and troubleshooting guides.</li>
               <li>Designed and executed UAT scenarios.</li>
-              <li>Developed test cases for positive and negative scenarios.</li>
-              <li>Provided user training and quick support.</li>
+              <li>Developed positive and negative test cases.</li>
+              <li>Provided quick user support and training.</li>
               <li>Analyzed and resolved user-reported issues.</li>
             </ul>
           </article>
@@ -235,172 +232,220 @@
               <span>PT Infotech Solution | Nusantara TV</span>
             </div>
             <h3>IT Application Support</h3>
-            <p class="period">Februari 2024 - Present</p>
+            <p class="period">February 2024 - Present</p>
             <ul>
               <li>Trained users on ClassX application usage.</li>
               <li>Provided user support and guidance.</li>
               <li>Analyzed and resolved reported issues.</li>
               <li>Supported feature development and customization.</li>
-              <li>Helped improve system performance and user satisfaction.</li>
+              <li>Helped improve system performance and satisfaction.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section id="keahlian" class="section panel reveal">
+      <section id="skills" class="section panel reveal">
         <div class="section-heading">
-          <p class="section-kicker">03 / Keahlian</p>
-          <h2>Toolset yang mendukung product research, QA, dan support digital.</h2>
+          <p class="section-kicker">03 / Skills</p>
+          <h2>Animated skill bars for testing, technical, and tools expertise.</h2>
         </div>
 
         <div class="skills-grid">
-          <article class="skill-card">
-            <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Top Skills</h3>
-            <div class="chips">
-              <span>Product Research</span>
-              <span>UI/UX Quality Assurance</span>
-              <span>Toad</span>
-              <span>Manual Testing</span>
-              <span>Automation Testing</span>
-              <span>UAT</span>
+          <article class="skill-card meter-card">
+            <div class="card-top">
+              <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Testing Skills</h3>
+              <span>Core QA capabilities</span>
+            </div>
+
+            <div class="meter-group">
+              <div class="meter">
+                <div class="meter-label"><span>Manual Testing</span><span>95%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="95"></span></div>
+              </div>
+              <div class="meter">
+                <div class="meter-label"><span>UAT</span><span>92%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="92"></span></div>
+              </div>
+              <div class="meter">
+                <div class="meter-label"><span>Automation Testing</span><span>78%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="78"></span></div>
+              </div>
             </div>
           </article>
 
-          <article class="skill-card">
-            <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>Tools & Platform</h3>
-            <div class="chips">
-              <span>JIRA</span>
-              <span>JMeter</span>
-              <span>SQL</span>
-              <span>Figma</span>
-              <span>Visual Studio</span>
-              <span>HTML / CSS</span>
-              <span>Selenium</span>
-              <span>Microsoft 365</span>
+          <article class="skill-card meter-card">
+            <div class="card-top">
+              <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>Technical Skills</h3>
+              <span>Support and analysis</span>
+            </div>
+
+            <div class="meter-group">
+              <div class="meter">
+                <div class="meter-label"><span>SQL</span><span>88%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="88"></span></div>
+              </div>
+              <div class="meter">
+                <div class="meter-label"><span>JIRA</span><span>90%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="90"></span></div>
+              </div>
+              <div class="meter">
+                <div class="meter-label"><span>Selenium</span><span>72%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="72"></span></div>
+              </div>
             </div>
           </article>
 
-          <article class="skill-card">
-            <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>Supporting Skills</h3>
-            <div class="chips">
-              <span>Agile</span>
-              <span>SDLC</span>
-              <span>ITSM</span>
-              <span>Documentation</span>
-              <span>Troubleshooting</span>
-              <span>User Training</span>
-              <span>Hardware & Software Support</span>
-              <span>Continuous Improvement</span>
+          <article class="skill-card meter-card">
+            <div class="card-top">
+              <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>Tools</h3>
+              <span>Design and workflow stack</span>
+            </div>
+
+            <div class="meter-group">
+              <div class="meter">
+                <div class="meter-label"><span>Figma</span><span>86%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="86"></span></div>
+              </div>
+              <div class="meter">
+                <div class="meter-label"><span>Visual Studio</span><span>80%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="80"></span></div>
+              </div>
+              <div class="meter">
+                <div class="meter-label"><span>Toad</span><span>76%</span></div>
+                <div class="meter-track"><span class="meter-fill" data-level="76"></span></div>
+              </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="sertifikasi" class="section panel reveal">
+      <section id="projects" class="section panel reveal">
         <div class="section-heading">
-          <p class="section-kicker">04 / Sertifikasi</p>
-          <h2>Kredensial yang memperkuat fondasi teknis dan kualitas kerja.</h2>
+          <p class="section-kicker">04 / Projects</p>
+          <h2>Card-based portfolio highlights with animated previews and details.</h2>
         </div>
 
-        <div class="cert-grid">
-          <article class="cert-card">
-            <span class="cert-year"><svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Featured</span>
-            <h3>Information Technology Service Management</h3>
-            <p>Certificate of Competence (BNSP)</p>
+        <div class="projects-grid">
+          <article class="project-card tilt-card">
+            <div class="project-preview preview-a"></div>
+            <div class="project-body">
+              <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>Research</div>
+              <h3>J.Wa Collection Thesis</h3>
+              <p>Design thinking, Figma prototype, SUS 75, and UEQ-based evaluation.</p>
+              <div class="tools-row">
+                <span>Figma</span><span>UEQ</span><span>SUS</span>
+              </div>
+              <button class="button button-secondary project-btn" type="button"
+                data-title="J.Wa Collection Thesis"
+                data-description="Research-based prototype work using design thinking, Figma, SUS, and UEQ."
+                data-tools="Figma, SUS, UEQ, Design Thinking">
+                View Details
+              </button>
+            </div>
           </article>
-          <article class="cert-card">
-            <span class="cert-year"><svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>Featured</span>
-            <h3>ISO 9001 Quality Management System</h3>
-            <p>Quality management system certification</p>
+
+          <article class="project-card tilt-card">
+            <div class="project-preview preview-b"></div>
+            <div class="project-body">
+              <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>Web</div>
+              <h3>E-commerce Website</h3>
+              <p>Front-end web development, SDLC workflow, and database structure planning.</p>
+              <div class="tools-row">
+                <span>HTML</span><span>CSS</span><span>SQL</span>
+              </div>
+              <button class="button button-secondary project-btn" type="button"
+                data-title="E-commerce Website"
+                data-description="Website project focused on front-end implementation, SDLC, and database planning."
+                data-tools="HTML, CSS, SQL, SDLC">
+                View Details
+              </button>
+            </div>
           </article>
-          <article class="cert-card">
-            <span class="cert-year"><svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>Featured</span>
-            <h3>SQL Server for Intermediate</h3>
-            <p>Certification from the profile document</p>
-          </article>
-          <article class="cert-card">
-            <span class="cert-year"><svg class="inline-icon" aria-hidden="true"><use href="#icon-mouse"></use></svg>Featured</span>
-            <h3>Oracle for Beginner</h3>
-            <p>Certification from the profile document</p>
-          </article>
-          <article class="cert-card">
-            <span class="cert-year"><svg class="inline-icon" aria-hidden="true"><use href="#icon-link"></use></svg>Featured</span>
-            <h3>Building Website using HTML 5</h3>
-            <p>Web fundamentals certification</p>
+
+          <article class="project-card tilt-card">
+            <div class="project-preview preview-c"></div>
+            <div class="project-body">
+              <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Teamwork</div>
+              <h3>WPL Community Website</h3>
+              <p>Collaborative website creation with ProjectLibre-based task structure.</p>
+              <div class="tools-row">
+                <span>ProjectLibre</span><span>Teamwork</span><span>Planning</span>
+              </div>
+              <button class="button button-secondary project-btn" type="button"
+                data-title="WPL Community Website"
+                data-description="Team-oriented website project with planning, coordination, and delivery support."
+                data-tools="ProjectLibre, Teamwork, Planning">
+                View Details
+              </button>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="fokus" class="section panel reveal">
+      <section id="contact" class="section panel reveal contact-panel">
         <div class="section-heading">
-          <p class="section-kicker">05 / Fokus Kerja</p>
-          <h2>Hal-hal yang paling sering saya kerjakan di lingkungan profesional.</h2>
+          <p class="section-kicker">05 / Contact</p>
+          <h2>Neon contact section with direct info and a quick message form.</h2>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>Documentation</div>
-            <h3>User Guides</h3>
-            <p>Saya membuat user documentation dan troubleshooting guide agar pengguna lebih mandiri.</p>
-          </article>
-
-          <article class="project-card">
-            <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-circuit"></use></svg>Testing</div>
-            <h3>UAT and Test Cases</h3>
-            <p>Saya merancang skenario UAT dan test case positif maupun negatif untuk menjaga kualitas fitur.</p>
-          </article>
-
-          <article class="project-card">
-            <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Support</div>
-            <h3>User Training</h3>
-            <p>Saya memberi pelatihan singkat dan support cepat untuk membantu adopsi aplikasi.</p>
-          </article>
-
-          <article class="project-card">
-            <div class="project-tag"><svg class="inline-icon" aria-hidden="true"><use href="#icon-mouse"></use></svg>Optimization</div>
-            <h3>Issue Resolution</h3>
-            <p>Saya menganalisis issue yang dilaporkan pengguna dan membantu meningkatkan performa sistem.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="kontak" class="section panel reveal contact-panel">
-        <div class="section-heading">
-          <p class="section-kicker">06 / Kontak</p>
-          <h2>Siap berdiskusi untuk tim QA, support, atau role digital lainnya.</h2>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-link"></use></svg>Hubungi Saya</h3>
+        <div class="contact-layout">
+          <div class="contact-card info-card">
+            <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-link"></use></svg>Contact Info</h3>
             <a class="contact-link" href="mailto:putuagus0010@gmail.com">
               <svg class="inline-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
               putuagus0010@gmail.com
-            </a>
-            <a class="contact-link" href="tel:+6281386169910">
-              <svg class="inline-icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
-              +62 813-8616-9910
             </a>
             <a class="contact-link" href="https://www.linkedin.com/in/agusadi" target="_blank" rel="noreferrer">
               <svg class="inline-icon" aria-hidden="true"><use href="#icon-link"></use></svg>
               linkedin.com/in/agusadi
             </a>
-          </div>
-          <div class="contact-card glow">
-            <h3><svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>Highlight Cepat</h3>
-            <p>
-              QA manual testing, automation testing, product research, UI/UX QA,
-              documentation, troubleshooting, dan koordinasi lintas tim.
+            <a class="contact-link" id="githubLink" href="#" target="_blank" rel="noreferrer">
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-spark"></use></svg>
+              GitHub - add in dashboard
+            </a>
+            <p class="contact-note">
+              You can upload a profile photo and add your GitHub through the dashboard.
             </p>
           </div>
+
+          <form class="contact-card contact-form" id="contactForm">
+            <h3>Send a Message</h3>
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="your@email.com" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Write a short message..."></textarea>
+            </label>
+            <button class="button button-primary" type="submit">
+              Send Message
+              <svg class="inline-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </button>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>(c) <span id="year"></span> I Putu Agus Adi Artha Saputra</p>
-      <p>Built with a futuristic glassmorphism style.</p>
+      <p>&copy; <span id="year"></span> I Putu Agus Adi Artha Saputra</p>
+      <p>Modern futuristic portfolio and editing dashboard.</p>
     </footer>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-modal></div>
+      <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close modal">×</button>
+        <p class="section-kicker">Project Details</p>
+        <h3 id="projectModalTitle"></h3>
+        <p id="projectModalDescription"></p>
+        <div class="modal-tools" id="projectModalTools"></div>
+      </div>
+    </div>
 
     <script src="portfolio-sync.js"></script>
     <script src="script.js"></script>
